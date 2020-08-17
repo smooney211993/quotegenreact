@@ -14,12 +14,14 @@ const App = () => {
       try{
         setIsLoading(true);
         const response = await fetch(proxy+apiUrl);
+        if(response.ok){
         const {quoteText, quoteAuthor} = await response.json();
         setQuoteData({
           quote: quoteText,
           author: quoteAuthor,
         })
         setIsLoading(false);
+      }
         
 
 
