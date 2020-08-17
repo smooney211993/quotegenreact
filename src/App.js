@@ -15,7 +15,6 @@ const App = () => {
         setIsLoading(true);
         const response = await fetch(proxy+apiUrl);
         const {quoteText, quoteAuthor} = await response.json();
-        console.log(quoteText);
         setQuoteData({
           quote: quoteText,
           author: quoteAuthor,
@@ -52,7 +51,7 @@ const App = () => {
 
    const renderLoading = ()=>{
     if(isLoading){
-      return <div class="loader" id="loader"></div>
+      return <div className="loader" id="loader"></div>
      } 
 
    }
